@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Scrap" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="562,1147" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Scrap" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="562,1253" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -49,19 +49,22 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Scrap" sap:VirtualizedContainerService.HintSize="522,1027" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Scrap" sap:VirtualizedContainerService.HintSize="522,1173" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Default="True" Name="gotNext" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Attach Browser 'firefox.exe  Instagram'" sap:VirtualizedContainerService.HintSize="500,903" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="16ac86ef45fdfc45b8db47722d0c5a65" Selector="&lt;html app='firefox.exe' title='Instagram' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Attach Browser 'firefox.exe  Instagram'" sap:VirtualizedContainerService.HintSize="500,1049" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="16ac86ef45fdfc45b8db47722d0c5a65" Selector="&lt;html app='firefox.exe' title='Instagram' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,757" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,903" sap2010:WorkflowViewState.IdRef="Sequence_1">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Default="1" Name="counter" />
             </Sequence.Variables>
@@ -70,8 +73,8 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <While sap:VirtualizedContainerService.HintSize="464,633" sap2010:WorkflowViewState.IdRef="While_1" Condition="[counter &lt; 11]">
-              <Sequence sap:VirtualizedContainerService.HintSize="336,476" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <While sap:VirtualizedContainerService.HintSize="464,779" sap2010:WorkflowViewState.IdRef="While_1" Condition="[gotNext]">
+              <Sequence sap:VirtualizedContainerService.HintSize="336,622" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -107,6 +110,11 @@
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2eb397cbba348c097d622ab7b4824c92" Selector="&lt;webctrl aaname='Copy Link' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
                   </ui:Click.Target>
                 </ui:Click>
+                <ui:UiElementExists DisplayName="Element Exists 'BUTTON'" Exists="[gotNext]" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="8b7100b4624426a774e8879aa2f2ed59" Selector="[&quot;&lt;webctrl css-selector='body&amp;gt;span&amp;gt;section&amp;gt;main&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;article&amp;gt;div&amp;gt;button' idx='&quot; + (counter + 1).ToString + &quot;' tag='BUTTON' /&gt;&quot;]" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
                 <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
