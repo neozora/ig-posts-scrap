@@ -985,15 +985,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Neo\\.nuget\\packages\\": {}
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "ig-posts-scrap",
       "projectName": "ig-posts-scrap",
-      "projectPath": "C:\\Users\\Neo\\Documents\\UiPath\\ig-posts-scrap\\.local",
-      "packagesPath": "C:\\Users\\Neo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Neo\\Documents\\UiPath\\ig-posts-scrap\\.local"
+      "projectPath": "C:\\Users\\Administrator\\Documents\\UiPath\\ig-posts-scrap\\.local",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Administrator\\Documents\\UiPath\\ig-posts-scrap\\.local"
     },
     "frameworks": {
       "net461": {
@@ -1021,5 +1021,14 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU3034",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.SignalR.Client 2.4.0' from source 'C:\\Users\\Administrator\\AppData\\Local\\UiPath\\app-19.4.2\\Packages': This package is signed but not by a trusted signer.",
+      "libraryId": "Microsoft.AspNet.SignalR.Client"
+    }
+  ]
 }
